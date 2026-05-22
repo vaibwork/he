@@ -1,0 +1,72 @@
+/* =============================================================
+   HUBRIS ENGINEERS — Responsive Stylesheet
+   ============================================================= */
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1024px) {
+  .hero__grid { grid-template-columns: 1fr; gap: 48px; }
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .band__grid { grid-template-columns: repeat(2, 1fr); gap: 36px 24px; }
+  .contact-cards { grid-template-columns: 1fr; }
+  .ind-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Mobile nav breakpoint ---------- */
+@media (max-width: 880px) {
+  .nav__toggle { display: flex; }
+  .nav__links {
+    position: fixed; top: 76px; left: 0; right: 0;
+    background: var(--bg-800); border-bottom: 1px solid var(--line);
+    flex-direction: column; align-items: stretch; gap: 0;
+    padding: 16px 24px 28px;
+    transform: translateY(-130%); opacity: 0; pointer-events: none;
+    transition: transform 0.4s var(--ease), opacity 0.3s;
+    max-height: calc(100vh - 76px); overflow-y: auto;
+  }
+  .nav__links.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .nav__links a { padding: 15px 8px; border-bottom: 1px solid var(--line-soft); font-size: 1rem; }
+  .nav__links a:last-of-type { border-bottom: none; }
+  .nav__cta { margin: 16px 0 0; }
+  .nav__cta .btn { width: 100%; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 680px) {
+  .section { padding: 70px 0; }
+  .container { padding: 0 18px; }
+
+  .grid--3, .grid--2, .grid--4 { grid-template-columns: 1fr; }
+  .split, .split--reverse .split__media { grid-template-columns: 1fr; }
+  .split--reverse .split__media { order: 0; }
+  .split { gap: 36px; }
+  .steps { grid-template-columns: 1fr; }
+  .band__grid { grid-template-columns: 1fr 1fr; }
+  .ind-grid { grid-template-columns: 1fr; }
+
+  .footer__grid { grid-template-columns: 1fr; gap: 36px; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+
+  .hero { padding: 130px 0 80px; }
+  .hero__actions .btn { width: 100%; }
+  .hero__stats { gap: 24px; }
+
+  .form-row { grid-template-columns: 1fr; }
+  .form-wrap { padding: 26px 20px; }
+
+  .cta-band { padding: 44px 24px; }
+  .cta-band__actions .btn { width: 100%; }
+
+  .clients__inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+
+  .page-hero { padding: 120px 0 56px; }
+
+  .wa-float { bottom: 18px; right: 18px; width: 52px; height: 52px; }
+  .wa-float svg { width: 26px; height: 26px; }
+}
+
+@media (max-width: 400px) {
+  .band__grid { grid-template-columns: 1fr; }
+  .brand__name span { display: none; }
+}
